@@ -29,15 +29,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
          node-version: '16.13.0'
- push:
-   runs-on: ubuntu-latest
-   needs: build
-   steps:
-   - name: login to jfrog
-     uses: jfrog/setup-jfrog-cli@v1
-     env:
-       ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
-   - run: |
-       jfrog --version
-       jfrog rt u -r covid-19 -u ${{ secrets.ARTIFACTORY_TOKEN }} -c public/
+  push:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: login to jfrog
+      uses: jfrog/setup-jfrog-cli@v1
+      env:
+        ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
+    - run: |
+        jfrog --version
+        jfrog rt u -r covid-19 -u ${{ secrets.ARTIFACTORY_TOKEN }} -c public/
 
