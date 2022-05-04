@@ -20,10 +20,10 @@ jobs:
           env:
             ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
             API_KEY_NPM_JFROG: ${{secrets.API_KEY_NPM_JFROG}}
-          run: |
-            jfrog rt dl build/
-            jfrog rt u aether build/
-            jfrog rt bp
+            run: |
+                jfrog rt dl build/
+                jfrog rt u aether build/
+                jfrog rt bp
 
     #npm config set registry https://devopslv.jfrog.io/artifactory/api/npm/default-npm-virtual/
     #curl -uadmin: API_KEY_NPM_JFROG http://devopslv.jfrog.io:8081/artifactory/api/npm/auth
