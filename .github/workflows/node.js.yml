@@ -15,7 +15,20 @@ jobs:
         with:
           name: artifact
           path: public/
-
+# agregado          
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+      - name: Create.npmrc
+        shell: bash
+        run: |
+          echo "registry=https://company.jfrog.io/artifactory/api/npm/npm-registry-name/" > .npmrc
+          echo "_auth = ${{ secrets.ARTIFACTORY_TOKEN }}" >> .npmrc
+          echo "always-auth = true" >> .npmrc
+   
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+         node-version: '10.14.0'
 #  push:
 #    runs-on: ubuntu-latest
 #    needs: build
