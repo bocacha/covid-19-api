@@ -5,6 +5,7 @@ import Card from './components/Card';
 import style from './App.module.css';
 //eslint-disable-next-line
 import Data,{Africa,America,Asia,Europa,Oceania} from './data';
+//testing
 
 
 export default function App() {
