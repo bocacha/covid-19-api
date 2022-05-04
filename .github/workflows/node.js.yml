@@ -39,5 +39,6 @@ jobs:
         ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
     - run: |
         jfrog --version
-        jfrog rt u -r covid-19 -u ${{ secrets.ARTIFACTORY_TOKEN }} -c public/
+        jfrog rt u "public/" default-npm-local
+#        jfrog rt u -r covid-19 -u ${{ secrets.ARTIFACTORY_TOKEN }} -c public/
 
