@@ -1,0 +1,8 @@
+version: 1
+type: npm
+resolver:
+  repo: covid19
+  serverId: Default-Server
+deployer:
+  repo: covid19
+  serverId: Default-Server
