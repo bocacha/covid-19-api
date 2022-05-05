@@ -20,14 +20,13 @@ jobs:
           env:
             ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
             API_KEY_NPM_JFROG: ${{secrets.API_KEY_NPM_JFROG}}
-          run: |
-            jfrog rt dl build/
-            jfrog rt u aether build/
-            jfrog rt bp
-
-    #npm config set registry https://devopslv.jfrog.io/artifactory/api/npm/default-npm-virtual/
-    #curl -uadmin: API_KEY_NPM_JFROG http://devopslv.jfrog.io:8081/artifactory/api/npm/auth
-    #npm install request
-    #npm publish
-    #jfrog config add artifact --url=https://devopslv.jfrog.io/artifactory/default-npm-virtual/api/npm
-    #jfrog rt u "public" default-npm-remote
+            run: |
+                jfrog rt dl build/
+                jfrog rt u aether build/
+                jfrog rt bp
+                npm config set @<SCOPE>:registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid-19/
+                curl -uadmin: API_KEY_NPM_JFROG http://jalartifactory.jfrog.io:8081/artifactory/api/npm/auth
+                npm install request
+                npm publish
+                jfrog config add artifact --url=https://jalartifactory.jfrog.io/artifactory/default-npm-virtual/api/npm
+                jfrog rt u "public" covid-19
