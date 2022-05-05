@@ -24,9 +24,9 @@ jobs:
                 jfrog rt dl build/
                 jfrog rt u aether build/
                 jfrog rt bp
-                npm config set @<SCOPE>:registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid-19/
+                npm config set @<SCOPE>:registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19/
                 curl -uadmin: API_KEY_NPM_JFROG http://jalartifactory.jfrog.io:8081/artifactory/api/npm/auth
                 npm install request
                 npm publish
-                jfrog config add artifact --url=https://jalartifactory.jfrog.io/artifactory/default-npm-virtual/api/npm
-                jfrog rt u "public" covid-19
+                jfrog config add artifact --url=https://jalartifactory.jfrog.io/artifactory/covid19/api/npm
+                jfrog rt u "public" covid19
