@@ -23,7 +23,7 @@ jobs:
             run: |
               - npm install
               - tar -czf test-project.tar.gz *
-              - /usr/local/bin/jfrog rt u --build-name="covid19" --build-number="${CI_BUILD_TAG}" covid19.tar.gz --url=https://jfrog.bintray.com/covid19
+              - /usr/local/bin/jfrog rt u --build-name="covid19" --build-number="${CI_BUILD_TAG}" covid19.tar.gz test-repo
 #                jfrog rt dl build/
 #                jfrog rt u aether build/
 #                jfrog rt bp
