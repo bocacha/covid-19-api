@@ -40,6 +40,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "publishConfig":{"registry":"https://jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/"}
 
 }
