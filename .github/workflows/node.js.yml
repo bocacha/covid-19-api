@@ -23,9 +23,6 @@ jobs:
             run: |
           
               - npm config set registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/
-              - npm config set //jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/:_authToken ${{secrets.API_KEY_NPM_JFROG}}
-              - npm config set //jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/:username martineduardogonzalez@gmail.com
-              - npm config set //jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/:password G0nz4l3z
               - npm login
               - npm publish 
               
