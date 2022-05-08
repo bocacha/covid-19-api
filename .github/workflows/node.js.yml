@@ -11,7 +11,7 @@ jobs:
           run: |
             npm install
             npm run build
-        - uses: actions/upload-artifact@main
+        - uses: actions/upload-artifact@master
           with:
             name: webpack artifacts
             path: build/
@@ -21,9 +21,20 @@ jobs:
             ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
             API_KEY_NPM_JFROG: ${{secrets.API_KEY_NPM_JFROG}}
             run: |
+              - npm config set registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19/
+              - npm login
+              - npm publish --registry http://localhost:8081/artifactory/api/npm/npm-repo/
               - npm install
               - tar -czf test-project.tar.gz *
               - /usr/local/bin/jfrog rt u --build-name="covid19" --build-number="${CI_BUILD_TAG}" covid19.tar.gz test-repo
+# agregar  antes del npm install
+
+#npm config set registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19/
+
+# hacer el publish
+
+
+
 #                jfrog rt dl build/
 #                jfrog rt u aether build/
 #                jfrog rt bp
