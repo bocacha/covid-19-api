@@ -15,13 +15,6 @@ jobs:
           with:
             name: webpack artifacts
             path: build/
-        - name: login to jfrog
-          uses: jfrog/setup-jfrog-cli@v1
-          env:
-            ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
-            API_KEY_NPM_JFROG: ${{secrets.API_KEY_NPM_JFROG}}
-            run: |
-          
-              - npm config set registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19/
+          run: |
               - npm publish 
               
