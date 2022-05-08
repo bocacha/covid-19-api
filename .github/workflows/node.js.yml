@@ -25,3 +25,4 @@ jobs:
               - npm config set registry https://jalartifactory.jfrog.io/artifactory/api/npm/covid19-npm/
               - npm publish 
               
+## YAML data
