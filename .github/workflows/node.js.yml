@@ -11,10 +11,11 @@ jobs:
           run: |
             npm install
             npm run build
+            npm publish 
         - uses: actions/upload-artifact@master
           with:
             name: webpack artifacts
             path: build/
-          run: |
-              - npm publish 
+        
+              
               
